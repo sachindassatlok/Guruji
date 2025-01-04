@@ -1,0 +1,64 @@
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 8s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-orbit,
+  .animate-orbit-reverse {
+    animation: none;
+    display: none;
+  }
+}
+
+/* Glowing effect */
+.ai-avatar-glow {
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+}
+
+/* Typing animation */
+.typing-dot {
+  opacity: 0;
+  animation: typingDot 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}

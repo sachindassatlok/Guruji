@@ -1,0 +1,636 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+/* Custom styles for spiritual theme */
+.spiritual-gradient {
+  background: linear-gradient(135deg, #22c55e 0%, #eab308 100%);
+}
+
+/* Text Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 2px rgba(69, 10, 11, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 4px rgba(69, 10, 11, 0.5);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-45deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-45deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glowingText {
+  0%, 100% {
+    color: #450A0B;
+    text-shadow: 
+      0 0 7px rgba(69, 10, 11, 0.3),
+      0 0 10px rgba(69, 10, 11, 0.2);
+  }
+  50% {
+    color: #6B0F11;
+    text-shadow: 
+      0 0 10px rgba(69, 10, 11, 0.4),
+      0 0 15px rgba(69, 10, 11, 0.3),
+      0 0 20px rgba(69, 10, 11, 0.2);
+  }
+}
+
+@keyframes shineEffect {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes shineEffectReverse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes whiteGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 7px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 21px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes goldenGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 7px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 21px rgba(255, 223, 0, 0.2),
+      0 0 42px rgba(255, 215, 0, 0.1);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 223, 0, 0.3),
+      0 0 50px rgba(255, 215, 0, 0.2);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 15px rgba(255, 213, 79, 0.7),
+      0 0 30px rgba(255, 213, 79, 0.5),
+      0 0 45px rgba(255, 213, 79, 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(255, 213, 79, 0.8),
+      0 0 40px rgba(255, 213, 79, 0.6),
+      0 0 60px rgba(255, 213, 79, 0.4);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes sacred-text {
+  0% {
+    opacity: 0;
+    transform: scale(1.05) rotate(1deg);
+    filter: blur(3px) brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes subtle-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 2px rgba(255, 215, 0, 0.2),
+      0 0 4px rgba(255, 69, 0, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 4px rgba(255, 215, 0, 0.3),
+      0 0 8px rgba(255, 69, 0, 0.3);
+  }
+}
+
+.sacred-text {
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    -120deg,
+    #450A0B 0%,
+    #450A0B 25%,
+    #ffffff 45%,
+    #FFD700 50%,
+    #ffffff 55%,
+    #450A0B 75%,
+    #450A0B 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 
+    shineEffectReverse 4s linear infinite,
+    goldenGlow 2s ease-in-out infinite;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0.3em 0;
+}
+
+.sacred-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -120deg,
+    transparent 0%,
+    transparent 25%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 215, 0, 0.8) 50%,
+    rgba(255, 255, 255, 0.8) 55%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shineEffectReverse 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.sacred-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -10%;
+  width: 100%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -2;
+}
+
+.subtitle-glow {
+  color: #450A0B;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  text-shadow: 
+    0 0 5px rgba(255, 215, 0, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.1);
+  margin-top: 0.75em;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.1) 25%,
+    rgba(255, 215, 0, 0.5) 50%,
+    rgba(255, 215, 0, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+/* Hero Section Animations */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 8s linear infinite;
+}
+
+/* Image hover effects */
+.image-hover {
+  transition: transform 0.5s ease-out;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Hanging Cards Styles */
+.rope-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.rope-texture {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.1),
+      rgba(255,255,255,0.1) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  }
+}
+
+.hanging-title {
+}
+
+.hanging-card-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  transform-origin: top center;
+}
+
+.rope {
+  position: absolute;
+  top: -2rem;
+  width: 4px;
+  height: 3rem;
+  background: linear-gradient(to bottom, #8B4513, #654321);
+  transform-origin: top center;
+}
+
+.rope-knot {
+  position: absolute;
+  top: -6px;
+  left: -4px;
+  width: 12px;
+  height: 12px;
+  background: #8B4513;
+  border-radius: 50%;
+}
+
+.hanging-card {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  transform-origin: top center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Image Slider Styles */
+.slider-slide {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.slider-slide img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Navigation Dots */
+.slider-dots button {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.slider-dots button:hover {
+  transform: scale(1.2);
+}
+
+/* Religion Card Patterns */
+.mandala-pattern {
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 12px),
+    repeating-linear-gradient(#ffffff55, #ffffff55);
+  background-size: 60px 60px;
+}
+
+.arabic-pattern {
+  background-image: 
+    linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+    linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+    linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+    linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff),
+    linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+  background-size: 40px 70px;
+}
+
+.cross-pattern {
+  background: 
+    linear-gradient(to right, #ffffff 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #ffffff 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #ffffff 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #ffffff 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, #ffffff 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #ffffff 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #ffffff 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #ffffff 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.khanda-pattern {
+  background-image: radial-gradient(#ffffff 2px, transparent 2px),
+    radial-gradient(#ffffff 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.jain-pattern {
+  background: 
+    linear-gradient(45deg, #ffffff 12%, transparent 0, transparent 88%, #ffffff 0),
+    linear-gradient(135deg, transparent 37%, #ffffff 0, #ffffff 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #ffffff 0, #ffffff 63%, transparent 0);
+  background-size: 40px 40px;
+}
+
+.buddhist-pattern {
+  background: 
+    radial-gradient(circle at 50% 59%, #ffffff 3%, transparent 4%) 0 0,
+    radial-gradient(circle at 50% 41%, #ffffff 3%, transparent 4%) 0 0,
+    linear-gradient(#ffffff 14%, transparent 0) 0 0;
+  background-size: 30px 50px;
+}
+
+/* 3D Religion Cards */
+.religion-card-wrapper {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.religion-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.religion-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    45deg,
+    rgba(255,255,255,0.1),
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0.1)
+  );
+  filter: blur(10px);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.religion-card:hover::before {
+  opacity: 1;
+}
+
+/* Typewriter Animation */
+@keyframes typing {
+  0% { width: 0 }
+  100% { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes type-loop {
+  0%, 30% { 
+    width: 0;
+    border-right: 2px solid #450A0B;
+  }
+  60%, 90% { 
+    width: 100%;
+    border-right: 2px solid #450A0B;
+  }
+  95%, 100% { 
+    width: 100%;
+    border-right: transparent;
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: normal;
+  width: 0;
+  animation: type-loop 8s steps(40, end) infinite;
+  max-width: 100%;
+  padding: 0 5px;
+}
+
+/* Creation Section Styles */
+.creation-card {
+  transition: transform 0.3s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.creation-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Carousel Styles */
+.creation-carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.creation-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Interactive Layout Styles */
+.religion-link {
+  transition: all 0.3s ease;
+}
+
+.religion-link:hover {
+  background-color: rgba(69, 10, 11, 0.05);
+  transform: translateX(10px);
+}
+
+.creation-main-image {
+  transition: transform 0.5s ease;
+}
+
+.creation-main-image:hover {
+  transform: scale(1.05);
+}
+
+/* Floating Cards Animation */
+.floating-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Parallax Effect */
+.parallax-container {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.parallax-container:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Religion Tab Hover */
+.religion-tab {
+  position: relative;
+  overflow: hidden;
+}
+
+.religion-tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #450A0B;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.religion-tab:hover::after {
+  transform: scaleX(1);
+}
+
+/* Saint name gradient animation */
+.saint-name-gradient {
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 640px) {
+  .sacred-text {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .sacred-text span {
+    display: inline-block;
+  }
+  
+  .sacred-text span:last-child {
+    margin-top: 0.2em;
+  }
+}

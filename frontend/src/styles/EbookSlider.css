@@ -1,0 +1,7 @@
+.ebook-swiper {
+  padding: 20px 0;
+}
+
+.ebook-swiper .swiper-slide {
+  transition: transform 0.3s ease;
+}
